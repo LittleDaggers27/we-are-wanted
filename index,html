@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wanted Poster</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            width: 420px;
+            aspect-ratio: 3 / 4;
+            background-image: url('3d0168b0-b6cd-46b9-895f-b5b15b5902a7.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+
+        .poster-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .poster-wrapper:hover::after {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+
+        .poster-wrapper:hover .overlay {
+            opacity: 1;
+        }
+
+        .download-btn {
+            padding: 14px 28px;
+            background: #facc15;
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="poster-wrapper">
+    <div class="overlay">
+        <a href="wanted-poster.psd" class="download-btn" download>
+            Download PSD
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
